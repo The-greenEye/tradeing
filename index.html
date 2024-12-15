@@ -214,7 +214,7 @@
         </button>
       </nav>
     </div>
-    <div class="flex flex-col lg:flex-row p-4 bg-transparent  d-lg-inline d-none">
+    <div class="p-2 bg-transparent d-lg-flex d-none">
       <div class="w-full lg:w-3/4 p-4">
         <div class="d-flex justify-between items-center flex-wrap">
           <h2 class="text-2xl font-bold">Change Chart</h2>
@@ -349,7 +349,7 @@
     </div>
     <div class="flex flex-col lg:flex-row p-4 bg-transparent  d-lg-none d-inline">
       <div class="w-full lg:w-3/4 p-1">
-     <div class="d-flex flex-column justify-content-center items-center w-full">
+        <div class="d-flex flex-column justify-content-center items-center w-full">
           <center><p class="font-bold">Change Chart</p></center>
           <div class="w-100 d-flex items-center overflow-x-scroll">
             <button style="background-color: #151924;border: none;" onclick="changeChart('doughnut')" class="text-gray-800 font-bold py-2 px-4 rounded-l">
@@ -378,7 +378,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 256 256"><path fill="#f9f9f9" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m87.63 96h-24.15A64.1 64.1 0 0 0 136 64.52V40.37A88.13 88.13 0 0 1 215.63 120M120 120H80.68A48.09 48.09 0 0 1 120 80.68Zm0 16v39.32A48.09 48.09 0 0 1 80.68 136Zm16 0h39.32A48.09 48.09 0 0 1 136 175.32Zm0-16V80.68A48.09 48.09 0 0 1 175.32 120Zm-16-79.63v24.15A64.1 64.1 0 0 0 64.52 120H40.37A88.13 88.13 0 0 1 120 40.37M40.37 136h24.15A64.1 64.1 0 0 0 120 191.48v24.15A88.13 88.13 0 0 1 40.37 136M136 215.63v-24.15A64.1 64.1 0 0 0 191.48 136h24.15A88.13 88.13 0 0 1 136 215.63" /></svg>
             </button>
           </div>
-        </div>
+        </div> 
         <div class="justify-content-end align-items-center w-full">
         <canvas id="myChart2" class="rounded-lg shadow-lg"></canvas>
         <div class="d-flex justify-content-between align-items-center w-full">
@@ -635,7 +635,7 @@
         },
       });
       const myChart2 = new Chart(ctx2, {
-        type: typeChart == null ? "line" : typeChart,,
+        type:  typeChart == null ? "line" : typeChart,
         data: {
           labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] ,
           datasets: [
