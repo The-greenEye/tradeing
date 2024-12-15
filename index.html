@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ["class"],
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+              },
+              popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+              },
+              card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ["class"],
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+              },
+              popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+              },
+              card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 222.2 84% 4.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 222.2 84% 4.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 222.2 84% 4.9%;
+          --primary: 221.2 83.2% 53.3%;
+          --primary-foreground: 210 40% 98%;
+          --secondary: 210 40% 96.1%;
+          --secondary-foreground: 222.2 47.4% 11.2%;
+          --muted: 210 40% 96.1%;
+          --muted-foreground: 215.4 16.3% 46.9%;
+          --accent: 210 40% 96.1%;
+          --accent-foreground: 222.2 47.4% 11.2%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 214.3 31.8% 91.4%;
+          --input: 214.3 31.8% 91.4%;
+          --ring: 221.2 83.2% 53.3%;
+        }
+        .dark {
+          --background: 222.2 84% 4.9%;
+          --foreground: 210 40% 98%;
+          --card: 222.2 84% 4.9%;
+          --card-foreground: 210 40% 98%;
+          --popover: 222.2 84% 4.9%;
+          --popover-foreground: 210 40% 98%;
+          --primary: 217.2 91.2% 59.8%;
+          --primary-foreground: 222.2 47.4% 11.2%;
+          --secondary: 217.2 32.6% 17.5%;
+          --secondary-foreground: 210 40% 98%;
+          --muted: 217.2 32.6% 17.5%;
+          --muted-foreground: 215 20.2% 65.1%;
+          --accent: 217.2 32.6% 17.5%;
+          --accent-foreground: 210 40% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 217.2 32.6% 17.5%;
+          --input: 217.2 32.6% 17.5%;
+          --ring: 224.3 76.3% 48%;
+        }
+      }
+    </style>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 222.2 84% 4.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 222.2 84% 4.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 222.2 84% 4.9%;
+          --primary: 221.2 83.2% 53.3%;
+          --primary-foreground: 210 40% 98%;
+          --secondary: 210 40% 96.1%;
+          --secondary-foreground: 222.2 47.4% 11.2%;
+          --muted: 210 40% 96.1%;
+          --muted-foreground: 215.4 16.3% 46.9%;
+          --accent: 210 40% 96.1%;
+          --accent-foreground: 222.2 47.4% 11.2%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 214.3 31.8% 91.4%;
+          --input: 214.3 31.8% 91.4%;
+          --ring: 221.2 83.2% 53.3%;
+        }
+        .dark {
+          --background: 222.2 84% 4.9%;
+          --foreground: 210 40% 98%;
+          --card: 222.2 84% 4.9%;
+          --card-foreground: 210 40% 98%;
+          --popover: 222.2 84% 4.9%;
+          --popover-foreground: 210 40% 98%;
+          --primary: 217.2 91.2% 59.8%;
+          --primary-foreground: 222.2 47.4% 11.2%;
+          --secondary: 217.2 32.6% 17.5%;
+          --secondary-foreground: 210 40% 98%;
+          --muted: 217.2 32.6% 17.5%;
+          --muted-foreground: 215 20.2% 65.1%;
+          --accent: 217.2 32.6% 17.5%;
+          --accent-foreground: 210 40% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 217.2 32.6% 17.5%;
+          --input: 217.2 32.6% 17.5%;
+          --ring: 224.3 76.3% 48%;
+        }
+      }
+      body {
+        background: #131722;
+        color: white;
+      }
+    </style>
+    <title>Chart.Js</title>
+  </head>
+  <body>
+    <div class="bg-background">
+      <nav class="flex items-center justify-between p-4" style="background-color: #151924">
+        <div class="flex items-center">
+          <img src="https://placehold.co/50" alt="logo" class="w-10 h-10 mr-2" />
+          <span class="text-primary text-lg font-semibold">Chart.Js</span>
+        </div>
+        <ul class="hidden lg:flex space-x-4">
+          <li><a href="#" class="text-primary hover-text-dark">Home</a></li>
+          <li><a href="#" class="text-primary hover-text-dark">Chart</a></li>
+          <li><a href="#" class="text-primary hover-text-dark">Account</a></li>
+        </ul>
+        <button class="lg:hidden focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+    <div class="flex flex-col lg:flex-row p-4 bg-transparent  d-lg-inline d-none">
+      <div class="w-full lg:w-3/4 p-4">
+        <div class="d-flex justify-between items-center flex-wrap">
+          <h2 class="text-2xl font-bold">Change Chart</h2>
+          <div class="d-flex flex-wrap items-center">
+            <button style="background-color: #151924;border: none;" onclick="changeChart('doughnut')" class="text-gray-800 font-bold py-2 px-4 rounded-l">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92c0 .9-.18 1.75-.5 2.54l2.62 1.53c.56-1.24.88-2.62.88-4.07c0-5.18-3.95-9.45-9-9.95M12 19a7 7 0 0 1-7-7c0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95a10 10 0 0 0 10 10c3.3 0 6.23-1.61 8.05-4.09l-2.6-1.53A6.89 6.89 0 0 1 12 19" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('pie')" class="text-gray-800 font-bold py-2 px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 512 512"><path fill="#f9f9f9" fill-rule="evenodd" d="m213.33 46.935l.002 43.776C139.722 109.657 85.334 176.477 85.334 256c0 94.256 76.41 170.666 170.666 170.666c79.524 0 146.343-54.39 165.29-127.998h43.776C445.299 396.044 359.209 469.334 256 469.334C138.18 469.334 42.667 373.82 42.667 256c0-103.208 73.29-189.298 170.664-209.065M256 42.667c116.643 0 211.421 93.612 213.305 209.805l.029 3.528H256z" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('line')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="m16 11.78l4.24-7.33l1.73 1l-5.23 9.05l-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('bar')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="M16 20v-7h4v7zm-6 0V4h4v16zm-6 0V9h4v11z" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('radar')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+                <g fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+                  <path d="m12 3l9.5 7L18 21H6L2.5 10z" />
+                  <path d="m12 7.5l5.5 4L15 17H8.5l-2-5.5z" />
+                  <path d="m2.5 10l9.5 3l9.5-3" />
+                  <path d="M12 3v10l6 8M6 21l6-8" />
+                </g>
+              </svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('polarArea')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 256 256"><path fill="#f9f9f9" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m87.63 96h-24.15A64.1 64.1 0 0 0 136 64.52V40.37A88.13 88.13 0 0 1 215.63 120M120 120H80.68A48.09 48.09 0 0 1 120 80.68Zm0 16v39.32A48.09 48.09 0 0 1 80.68 136Zm16 0h39.32A48.09 48.09 0 0 1 136 175.32Zm0-16V80.68A48.09 48.09 0 0 1 175.32 120Zm-16-79.63v24.15A64.1 64.1 0 0 0 64.52 120H40.37A88.13 88.13 0 0 1 120 40.37M40.37 136h24.15A64.1 64.1 0 0 0 120 191.48v24.15A88.13 88.13 0 0 1 40.37 136M136 215.63v-24.15A64.1 64.1 0 0 0 191.48 136h24.15A88.13 88.13 0 0 1 136 215.63" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="justify-content-end align-items-center">
+        <canvas id="myChart" class="rounded-lg shadow-lg" style="min-height: 400px;"></canvas>
+        <div class="d-flex justify-content-between align-items-center">
+          <ul class="flex  flex-wrap justify-start items-center" dir="ltr">
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10s10-4.477 10-10m-10.004 0h.009M12 2v4m10 6h-4m-6 6v4M6 12H2" color="#f9f9f9"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-width="1.6" d="M15 9V6c0-.943 0-1.414.293-1.707S16.057 4 17 4h1c.943 0 1.414 0 1.707.293S20 5.057 20 6v1c0 .943 0 1.414-.293 1.707S18.943 9 18 9zM9 20H4v-5m0 5L15 9"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 512 512"><path fill="#f9f9f9" d="m19.828 18.256l-.002.015c249.642 36.995 371.904 169.983 397.32 278.01c-2.094 5.977-4.496 11.044-7.068 14.968c-17.29 26.383-62.522 40.075-101.654 28.596c5.984-19.75 10.132-39.834 12.07-59.12c-95.46 8.177-212.544 8.42-301.207-22.642c41.727 95.317 99.325 164.465 164.983 230.08c18.296-2.164 35.807-11.35 51.837-25.37c85.218 34.667 188.066-2.555 226.748-60.68c46.922-70.5 74.07-317.52-167.462-383.856H232.81c160.326 54.874 195.73 167.74 191.573 239.03c-37.15-93.627-137.68-191.855-312.38-239.03H19.83z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 32 32"><path fill="#f9f9f9" d="M8 20H4.73A1.97 1.97 0 0 0 3 19a2 2 0 0 0 0 4a1.97 1.97 0 0 0 1.73-1H8zM29 9a1.97 1.97 0 0 0-1.73 1H24v2h3.27A2 2 0 1 0 29 9"/><path fill="#f9f9f9" d="M25.414 5L21 .586L16.586 5L20 8.414V18h2V8.414zM21 3.414L22.586 5L21 6.586L19.414 5zm-9 20.172V14h-2v9.586L6.586 27L11 31.414L15.414 27zM9.414 27L11 25.414L12.586 27L11 28.586z"/><path fill="#f9f9f9" d="M18 10H8.414L5 6.586L.586 11L5 15.414L8.414 12H18ZM5 12.586L3.414 11L5 9.414L6.586 11Z"/><path fill="#f9f9f9" d="M13 3a2 2 0 0 0-4 0a1.97 1.97 0 0 0 1 1.73V8h2V4.73A1.97 1.97 0 0 0 13 3m9 24.27V24h-2v3.27a2 2 0 1 0 2 0"/><path fill="#f9f9f9" d="M31.414 21L27 16.586L23.586 20H14v2h9.586L27 25.414ZM27 19.414L28.586 21L27 22.586L25.414 21Z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 48 48"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" d="M32.33 5.87a1.15 1.15 0 0 1 1.66 0l7.49 7.49a1.15 1.15 0 0 1 0 1.67l-5 5l-9.16-9.16Zm-5 5L36.49 20l-1.67 1.67l-9.15-9.16Zm7.49 10.83l-18 18l-11.13 2.8h0L8.18 30l17.49-17.47M8.18 30.01l8.64 9.68m9.81-22.18L13.19 30.95M29.6 20.48L16.16 33.93"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7V5H5v2m7-2v14m0 0h-2m2 0h2"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;border-right: 1px solid #f1f1f1d8;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#f9f9f9" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m2.8 9.857a1 1 0 1 1 1.4 1.428A5.98 5.98 0 0 1 12 17a5.98 5.98 0 0 1-4.2-1.715a1 1 0 0 1 1.4-1.428A3.98 3.98 0 0 0 12 15c1.09 0 2.077-.435 2.8-1.143M8.5 8a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3m7 0a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3"/></g></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 16 16"><path fill="none" stroke="#f9f9f9" d="m4.354 8.854l1.5 1.5m0-3l1.5 1.5m1.5-4.5l1.5 1.5m-3 0l1.5 1.5m2.328-4.657l2.121 2.121a.5.5 0 0 1 0 .707l-7.778 7.778a.5.5 0 0 1-.707 0l-2.121-2.121a.5.5 0 0 1 0-.707l7.778-7.778a.5.5 0 0 1 .707 0Z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#f9f9f9" d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M6 10.5a1 1 0 0 1 1-1h2.5V7a1 1 0 0 1 2 0v2.5H14a1 1 0 1 1 0 2h-2.5V14a1 1 0 1 1-2 0v-2.5H7a1 1 0 0 1-1-1"/></g></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 16 16"><path fill="#f9f9f9" fill-rule="evenodd" d="M5.75 3V1.5h4.5V3zm-1.5 0V1a1 1 0 0 1 1-1h5.5a1 1 0 0 1 1 1v2h2.5a.75.75 0 0 1 0 1.5h-.365l-.743 9.653A2 2 0 0 1 11.148 16H4.852a2 2 0 0 1-1.994-1.847L2.115 4.5H1.75a.75.75 0 0 1 0-1.5zm-.63 1.5h8.76l-.734 9.538a.5.5 0 0 1-.498.462H4.852a.5.5 0 0 1-.498-.462z" clip-rule="evenodd"/></svg></li>
+        </ul>   
+        <h2 class="text-2xl font-bold">Controls Chart</h2>       
+        </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/4 bg-transparent p-4 rounded-lg shadow-lg">
+        <h2 class="text-lg font-semibold mb-2">
+          <select name="whatchlist" id="watch" class="btn btn-outline-light dropdown-toggle w-50 border-0 rounded-lg text-white " style="background-color: #131722;">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+            <option value="HKD">HKD</option>
+            <option value="NZD">NZD</option>
+            <option value="SEK">SEK</option>
+          </select>
+        </h2>
+        <input type="text" placeholder="Search" class="p-2 mb-4 border border-border rounded-lg w-full" />
+        <div class="overflow-y-auto h-64">
+          <ul>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>USDCAD</span>
+              <span class="text-red-500">1.42099</span>
+              <span class="text-green-500">1.42103</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>USDCHF</span>
+              <span class="text-red-500">0.89145</span>
+              <span class="text-green-500">0.89157</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>EURCHF</span>
+              <span class="text-red-500">0.93313</span>
+              <span class="text-green-500">0.93317</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>EURGBP</span>
+              <span class="text-red-500">0.82637</span>
+              <span class="text-green-500">0.82644</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>USDJPY</span>
+              <span class="text-red-500">152.579</span>
+              <span class="text-green-500">152.586</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>AUDUSD</span>
+              <span class="text-red-500">0.63652</span>
+              <span class="text-green-500">0.63654</span>
+            </li>
+          </ul>
+        </div>
+        <div class="overflow-y-auto border-top border-secondary mt-2">
+<div class="bg-transparent dark:bg-background dark:text-card-foreground p-4 rounded-lg shadow-lg text-white overflow-y-hidden">
+  <div class="flex items-center">
+    <img aria-hidden="true" alt="apple-logo" src="https://openui.fly.dev/openui/24x24.svg?text=🍏" class="mr-2" />
+    <h2 class="text-xl font-bold">AAPL</h2>
+  </div>
+  <p class="text-muted-foreground dark:text-muted">Apple Inc. • NASDAQ</p>
+  <h1 class="text-3xl font-semibold text-green dark:text-green-400">248.13</h1>
+  <p class="text-green-500 dark:text-green-400">0.17 (0.07%)</p>
+  <p class="text-muted-foreground dark:text-muted">AT CLOSE</p>
+  <div class="flex space-x-4 mt-2">
+    <button class="w-100 bg-secondary dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded">POST</button>
+    <button class="w-100 bg-secondary dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded">NO</button>
+  </div>
+  <div class="mt-4">
+    <span class="text-muted-foreground dark:text-muted m-4">247.60</span>
+    <span class="text-muted-foreground dark:text-muted m-4">247.73</span>
+  </div>
+</div>
+        </div>
+        <div class="d-flex fless-row justify-content-between mt-4">
+          <button class="btn btn-success w-100 p-2 m-2 d-flex justify-content-around align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 32 32"><path fill="#f9f9f9" d="M30 6V4h-3V2h-2v2h-1c-1.103 0-2 .898-2 2v2c0 1.103.897 2 2 2h4v2h-6v2h3v2h2v-2h1c1.103 0 2-.897 2-2v-2c0-1.102-.897-2-2-2h-4V6zm-6 14v2h2.586L23 25.586l-2.292-2.293a1 1 0 0 0-.706-.293H20a1 1 0 0 0-.706.293L14 28.586L15.414 30l4.587-4.586l2.292 2.293a1 1 0 0 0 1.414 0L28 23.414V26h2v-6zM4 30H2v-5c0-3.86 3.14-7 7-7h6c1.989 0 3.89.85 5.217 2.333l-1.49 1.334A5 5 0 0 0 15 20H9c-2.757 0-5 2.243-5 5zm8-14a7 7 0 1 0 0-14a7 7 0 0 0 0 14m0-12a5 5 0 1 1 0 10a5 5 0 0 1 0-10" /></svg>Sale
+          </button>
+          <button class="btn btn-danger w-100 p-2 m-2 d-flex justify-content-around align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="M9.001 14.278a.73.73 0 0 1-.97-.296l-2.05-4.5a.367.367 0 0 1 .551-.448l2.363 1.683a1.1 1.1 0 0 0 .977.111l11.113-4.946C18.993 3.534 15.713 2 12 2C5.925 2 1 6.104 1 11.167c0 2.762 1.482 5.248 3.8 6.929a.73.73 0 0 1 .27.83l-.496 1.85c-.023.087-.059.177-.059.268c0 .202.164.367.367.367c.08 0 .144-.03.212-.069l2.408-1.39a1.15 1.15 0 0 1 .584-.17q.169.001.323.05a13 13 0 0 0 3.591.502c6.075 0 11-4.104 11-9.167c0-1.534-.454-2.978-1.253-4.248L9.081 14.232z" /></svg> Pay
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col lg:flex-row p-4 bg-transparent  d-lg-none d-inline">
+      <div class="w-full lg:w-3/4 p-1">
+        <!-- <div class="d-flex flex-column justify-content-center items-center w-full">
+          <center><p class="font-bold">Change Chart</p></center>
+          <div class="w-100 d-flex items-center overflow-x-scroll">
+            <button style="background-color: #151924;border: none;" onclick="changeChart('doughnut')" class="text-gray-800 font-bold py-2 px-4 rounded-l">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92c0 .9-.18 1.75-.5 2.54l2.62 1.53c.56-1.24.88-2.62.88-4.07c0-5.18-3.95-9.45-9-9.95M12 19a7 7 0 0 1-7-7c0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95a10 10 0 0 0 10 10c3.3 0 6.23-1.61 8.05-4.09l-2.6-1.53A6.89 6.89 0 0 1 12 19" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('pie')" class="text-gray-800 font-bold py-2 px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 512 512"><path fill="#f9f9f9" fill-rule="evenodd" d="m213.33 46.935l.002 43.776C139.722 109.657 85.334 176.477 85.334 256c0 94.256 76.41 170.666 170.666 170.666c79.524 0 146.343-54.39 165.29-127.998h43.776C445.299 396.044 359.209 469.334 256 469.334C138.18 469.334 42.667 373.82 42.667 256c0-103.208 73.29-189.298 170.664-209.065M256 42.667c116.643 0 211.421 93.612 213.305 209.805l.029 3.528H256z" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('line')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="m16 11.78l4.24-7.33l1.73 1l-5.23 9.05l-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('bar')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="M16 20v-7h4v7zm-6 0V4h4v16zm-6 0V9h4v11z" /></svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('radar')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24">
+                <g fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6">
+                  <path d="m12 3l9.5 7L18 21H6L2.5 10z" />
+                  <path d="m12 7.5l5.5 4L15 17H8.5l-2-5.5z" />
+                  <path d="m2.5 10l9.5 3l9.5-3" />
+                  <path d="M12 3v10l6 8M6 21l6-8" />
+                </g>
+              </svg>
+            </button>
+            <button style="background-color: #151924;border: none;" onclick="changeChart('polarArea')" class="text-gray-800 font-bold py-2 px-4 rounded-r">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 256 256"><path fill="#f9f9f9" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m87.63 96h-24.15A64.1 64.1 0 0 0 136 64.52V40.37A88.13 88.13 0 0 1 215.63 120M120 120H80.68A48.09 48.09 0 0 1 120 80.68Zm0 16v39.32A48.09 48.09 0 0 1 80.68 136Zm16 0h39.32A48.09 48.09 0 0 1 136 175.32Zm0-16V80.68A48.09 48.09 0 0 1 175.32 120Zm-16-79.63v24.15A64.1 64.1 0 0 0 64.52 120H40.37A88.13 88.13 0 0 1 120 40.37M40.37 136h24.15A64.1 64.1 0 0 0 120 191.48v24.15A88.13 88.13 0 0 1 40.37 136M136 215.63v-24.15A64.1 64.1 0 0 0 191.48 136h24.15A88.13 88.13 0 0 1 136 215.63" /></svg>
+            </button>
+          </div>
+        </div> -->
+        <div class="justify-content-end align-items-center w-full">
+        <canvas id="myChart2" class="rounded-lg shadow-lg"></canvas>
+        <div class="d-flex justify-content-between align-items-center w-full">
+          <ul class="flex  justify-start items-center overflow-x-scroll w-full" dir="ltr">
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10s10-4.477 10-10m-10.004 0h.009M12 2v4m10 6h-4m-6 6v4M6 12H2" color="#f9f9f9"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-width="1.6" d="M15 9V6c0-.943 0-1.414.293-1.707S16.057 4 17 4h1c.943 0 1.414 0 1.707.293S20 5.057 20 6v1c0 .943 0 1.414-.293 1.707S18.943 9 18 9zM9 20H4v-5m0 5L15 9"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 512 512"><path fill="#f9f9f9" d="m19.828 18.256l-.002.015c249.642 36.995 371.904 169.983 397.32 278.01c-2.094 5.977-4.496 11.044-7.068 14.968c-17.29 26.383-62.522 40.075-101.654 28.596c5.984-19.75 10.132-39.834 12.07-59.12c-95.46 8.177-212.544 8.42-301.207-22.642c41.727 95.317 99.325 164.465 164.983 230.08c18.296-2.164 35.807-11.35 51.837-25.37c85.218 34.667 188.066-2.555 226.748-60.68c46.922-70.5 74.07-317.52-167.462-383.856H232.81c160.326 54.874 195.73 167.74 191.573 239.03c-37.15-93.627-137.68-191.855-312.38-239.03H19.83z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 32 32"><path fill="#f9f9f9" d="M8 20H4.73A1.97 1.97 0 0 0 3 19a2 2 0 0 0 0 4a1.97 1.97 0 0 0 1.73-1H8zM29 9a1.97 1.97 0 0 0-1.73 1H24v2h3.27A2 2 0 1 0 29 9"/><path fill="#f9f9f9" d="M25.414 5L21 .586L16.586 5L20 8.414V18h2V8.414zM21 3.414L22.586 5L21 6.586L19.414 5zm-9 20.172V14h-2v9.586L6.586 27L11 31.414L15.414 27zM9.414 27L11 25.414L12.586 27L11 28.586z"/><path fill="#f9f9f9" d="M18 10H8.414L5 6.586L.586 11L5 15.414L8.414 12H18ZM5 12.586L3.414 11L5 9.414L6.586 11Z"/><path fill="#f9f9f9" d="M13 3a2 2 0 0 0-4 0a1.97 1.97 0 0 0 1 1.73V8h2V4.73A1.97 1.97 0 0 0 13 3m9 24.27V24h-2v3.27a2 2 0 1 0 2 0"/><path fill="#f9f9f9" d="M31.414 21L27 16.586L23.586 20H14v2h9.586L27 25.414ZM27 19.414L28.586 21L27 22.586L25.414 21Z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 48 48"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" d="M32.33 5.87a1.15 1.15 0 0 1 1.66 0l7.49 7.49a1.15 1.15 0 0 1 0 1.67l-5 5l-9.16-9.16Zm-5 5L36.49 20l-1.67 1.67l-9.15-9.16Zm7.49 10.83l-18 18l-11.13 2.8h0L8.18 30l17.49-17.47M8.18 30.01l8.64 9.68m9.81-22.18L13.19 30.95M29.6 20.48L16.16 33.93"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7V5H5v2m7-2v14m0 0h-2m2 0h2"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#f9f9f9" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m2.8 9.857a1 1 0 1 1 1.4 1.428A5.98 5.98 0 0 1 12 17a5.98 5.98 0 0 1-4.2-1.715a1 1 0 0 1 1.4-1.428A3.98 3.98 0 0 0 12 15c1.09 0 2.077-.435 2.8-1.143M8.5 8a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3m7 0a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3"/></g></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16"><path fill="none" stroke="#f9f9f9" d="m4.354 8.854l1.5 1.5m0-3l1.5 1.5m1.5-4.5l1.5 1.5m-3 0l1.5 1.5m2.328-4.657l2.121 2.121a.5.5 0 0 1 0 .707l-7.778 7.778a.5.5 0 0 1-.707 0l-2.121-2.121a.5.5 0 0 1 0-.707l7.778-7.778a.5.5 0 0 1 .707 0Z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#f9f9f9" d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M6 10.5a1 1 0 0 1 1-1h2.5V7a1 1 0 0 1 2 0v2.5H14a1 1 0 1 1 0 2h-2.5V14a1 1 0 1 1-2 0v-2.5H7a1 1 0 0 1-1-1"/></g></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="#f9f9f9" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16"><path fill="#f9f9f9" fill-rule="evenodd" d="M5.75 3V1.5h4.5V3zm-1.5 0V1a1 1 0 0 1 1-1h5.5a1 1 0 0 1 1 1v2h2.5a.75.75 0 0 1 0 1.5h-.365l-.743 9.653A2 2 0 0 1 11.148 16H4.852a2 2 0 0 1-1.994-1.847L2.115 4.5H1.75a.75.75 0 0 1 0-1.5zm-.63 1.5h8.76l-.734 9.538a.5.5 0 0 1-.498.462H4.852a.5.5 0 0 1-.498-.462z" clip-rule="evenodd"/></svg></li>
+        </ul>   
+        </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/4 bg-transparent p-1 rounded-lg shadow-lg">
+        <div class="d-flex fless-row justify-content-between mt-4">
+          <button class="btn btn-outline-success w-100 p-2 m-2 d-flex justify-content-around align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><g fill="none" stroke="#31ff01" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#31ff01"><path d="M20 13V8h-5"/><path d="m20 8l-5 5c-.883.883-1.324 1.324-1.865 1.373q-.135.012-.27 0c-.541-.05-.982-.49-1.865-1.373s-1.324-1.324-1.865-1.373a1.5 1.5 0 0 0-.27 0c-.541.05-.982.49-1.865 1.373l-3 3"/></g></svg>
+          </button>
+          <button class="btn btn-outline-danger w-100 p-2 m-2 d-flex justify-content-around align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><g fill="none" stroke="#e30000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#e30000"><path d="M20 11v5h-5"/><path d="m20 16l-5-5c-.883-.883-1.324-1.324-1.865-1.373a1.5 1.5 0 0 0-.27 0c-.541.05-.982.49-1.865 1.373s-1.324 1.324-1.865 1.373q-.135.012-.27 0c-.541-.05-.982-.49-1.865-1.373L4 8"/></g></svg>          </button>
+        </div>
+        <h2 class="text-lg font-semibold mb-2">
+          <select name="whatchlist" id="watch" class="btn btn-outline-light dropdown-toggle w-50 border-0 rounded-lg text-white " style="background-color: #131722;">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option
+            <option value="CHF">CHF</option>
+            <option value="CNY">CNY</option>
+            <option value="HKD">HKD</option>
+            <option value="NZD">NZD</option>
+            <option value="SEK">SEK</option>
+          </select>
+        </h2>
+        <input type="text" placeholder="Search" class="p-2 mb-4 border border-border rounded-lg w-full" />
+        <div class="overflow-y-auto h-64">
+          <ul>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>USDCAD</span>
+              <span class="text-red-500">1.42099</span>
+              <span class="text-green-500">1.42103</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>USDCHF</span>
+              <span class="text-red-500">0.89145</span>
+              <span class="text-green-500">0.89157</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>EURCHF</span>
+              <span class="text-red-500">0.93313</span>
+              <span class="text-green-500">0.93317</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>EURGBP</span>
+              <span class="text-red-500">0.82637</span>
+              <span class="text-green-500">0.82644</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>USDJPY</span>
+              <span class="text-red-500">152.579</span>
+              <span class="text-green-500">152.586</span>
+            </li>
+            <li class="flex justify-between items-center p-2 cursor-pointer">
+              <span>AUDUSD</span>
+              <span class="text-red-500">0.63652</span>
+              <span class="text-green-500">0.63654</span>
+            </li>
+          </ul>
+        </div>
+        <div class="overflow-y-auto border-top border-secondary mt-2">
+<div class="bg-transparent dark:bg-background dark:text-card-foreground p-4 rounded-lg shadow-lg text-white overflow-y-hidden">
+  <div class="flex items-center">
+    <img aria-hidden="true" alt="apple-logo" src="https://openui.fly.dev/openui/24x24.svg?text=🍏" class="mr-2" />
+    <h2 class="text-xl font-bold">AAPL</h2>
+  </div>
+  <p class="text-muted-foreground dark:text-muted">Apple Inc. • NASDAQ</p>
+  <h1 class="text-3xl font-semibold text-green dark:text-green-400">248.13</h1>
+  <p class="text-green-500 dark:text-green-400">0.17 (0.07%)</p>
+  <p class="text-muted-foreground dark:text-muted">AT CLOSE</p>
+  <div class="flex space-x-4 mt-2">
+    <button class="w-100 bg-secondary dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded">POST</button>
+    <button class="w-100 bg-secondary dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded">NO</button>
+  </div>
+  <div class="mt-4">
+    <span class="text-muted-foreground dark:text-muted m-4">247.60</span>
+    <span class="text-muted-foreground dark:text-muted m-4">247.73</span>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="overflow-x-auto mt-4">
+      <table class="min-w-full bg-transparent border border-border rounded-lg">
+        <thead>
+          <tr class="bg-transparent">
+            <th class="p-2 text-left">Ticket</th>
+            <th class="p-2 text-left">Open Time</th>
+            <th class="p-2 text-left">Instrument</th>
+            <th class="p-2 text-left">Open Rate</th>
+            <th class="p-2 text-left">Market Rate</th>
+            <th class="p-2 text-left">Profit/Loss</th>
+            <th class="p-2 text-left">Take/Profit</th>
+            <th class="p-2 text-left">Stop/Loss</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-2">12345</td>
+            <td class="p-2">10:00</td>
+            <td class="p-2">USD/CNH</td>
+            <td class="p-2">7.27733</td>
+            <td class="p-2">7.27764</td>
+            <td class="p-2 text-green-500">+0.00262</td>
+            <td class="p-2">7.2800</td>
+            <td class="p-2">7.2700</td>
+          </tr>
+          <tr>
+            <td class="p-2">12346</td>
+            <td class="p-2">10:05</td>
+            <td class="p-2">EUR/USD</td>
+            <td class="p-2">1.10000</td>
+            <td class="p-2">1.10050</td>
+            <td class="p-2 text-red-500">-0.00500</td>
+            <td class="p-2">1.10200</td>
+            <td class="p-2">1.09800</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById("myChart").getContext("2d");
+      const ctx2 = document.getElementById("myChart2").getContext("2d");
+      let typeChart = !JSON.parse(localStorage.getItem("typeChart")) ? "line" : JSON.parse(localStorage.getItem("typeChart"));
+      function changeChart(vl) {
+        localStorage.setItem("typeChart", JSON.stringify(vl));
+        location.reload();
+      }
+      const myChart = new Chart(ctx, {
+        type: typeChart == null ? "line" : typeChart,
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [
+            {
+              label: "USD/CNH",
+              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              borderColor: "#fff",
+              borderWidth: 1,
+              fill: true,
+              hoverBackgroundColor: "transparent",
+              barPercentage: 0.5,
+              grouped: true,
+              skipNull: true,
+              drawActiveElementOnTop: true,
+              pointerRadius: 0,
+              order: 2,
+            },
+            {
+              label: "EUR/USD",
+              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
+              backgroundColor: "#151924",
+              borderColor: "#white",
+              borderWidth: 1,
+              fill: "origin",
+              hoverBackgroundColor: "transparent",
+              barPercentage: 0.5,
+              grouped: true,
+              skipNull: true,
+              drawActiveElementOnTop: true,
+              pointerRadius: 0,
+              order: 1,
+            },
+            {
+              label: "GBP/USD",
+              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
+              backgroundColor: "#141414",
+              borderColor: "#fff",
+              borderWidth: 1,
+              fill: "-2",
+              hoverBackgroundColor: "transparent",
+              barPercentage: 0.5,
+              grouped: true,
+              skipNull: true,
+              drawActiveElementOnTop: true,
+              pointerRadius: 0,
+              order: 3,
+            },
+            {
+              label: "USD/JPY",
+              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              borderColor: "#00000",
+              borderWidth: 1,
+              fill: 1,
+              hoverBackgroundColor: "transparent",
+              barPercentage: 0.5,
+              grouped: true,
+              skipNull: true,
+              drawActiveElementOnTop: true,
+              pointerRadius: 0,
+              order: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Value",
+              },
+            },
+            x: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Month",
+                stacked: true,
+              },
+            },
+          },
+          animation: {
+            duration: 2000,
+            easing: "easeInOutBack",
+          },
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom",
+            },
+            title: {
+              display: true,
+              text: "Chart",
+            },
+            tooltip: {
+              enabled: true,
+            },
+            MouseEvents: {
+              intersect: true,
+            },
+          },
+          
+        },
+      });
+      const myChart2 = new Chart(ctx2, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] ,
+          datasets: [
+            {
+              label: "USD/CNH",
+              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              borderColor: "#fff",
+              borderWidth: 1,
+              fill: false,
+              hoverBackgroundColor: "transparent",
+              barPercentage: 0.5,
+              grouped: true,
+              skipNull: true,
+              drawActiveElementOnTop: true,
+              pointerRadius: 0,
+              order: 2,
+            },
+            {
+              label: "EUR/USD",
+              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
+              backgroundColor: "#151924",
+              borderColor: "#white",
+              borderWidth: 1,
+              fill: "origin",
+              hoverBackgroundColor: "transparent",
+              barPercentage: 0.5,
+              grouped: true,
+              skipNull: true,
+              drawActiveElementOnTop: true,
+              pointerRadius: 0,
+              order: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: {
+                    
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              alignToPixels: true,
+              display: true,
+            },
+            x: {
+              beginAtZero: true,
+            },
+          },
+          animation: {
+            duration: 2000,
+            easing: "easeInOutBack",
+          },
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom",
+            },
+            title: {
+              display: true,
+              text: "Chart",
+            },
+            tooltip: {
+              enabled: true,
+            },
+            MouseEvents: {
+              intersect: true,
+            },
+            decimation: {
+            enabled: true,
+          },
+          }          
+        },
+      });
+    </script>
+  </body>
+</html>
