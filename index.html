@@ -7,6 +7,97 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
     <script type="text/javascript">
       window.tailwind.config = {
         darkMode: ["class"],
@@ -191,29 +282,22 @@
       body {
         background: #131722;
         color: white;
+        overflow-x: hidden;
+      }
+      #btn-sale {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        display: none;
+      }
+      #btn-sale2, #btn-sale3, #btn-sale4, #open-this, #open-this2 {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        display: none;
       }
     </style>
     <title>Chart.Js</title>
   </head>
   <body>
-    <div class="bg-background">
-      <nav class="flex items-center justify-between p-4" style="background-color: #151924">
-        <div class="flex items-center">
-          <img src="https://placehold.co/50" alt="logo" class="w-10 h-10 mr-2" />
-          <span class="text-primary text-lg font-semibold">Chart.Js</span>
-        </div>
-        <ul class="hidden lg:flex space-x-4">
-          <li><a href="#" class="text-primary hover-text-dark">Home</a></li>
-          <li><a href="#" class="text-primary hover-text-dark">Chart</a></li>
-          <li><a href="#" class="text-primary hover-text-dark">Account</a></li>
-        </ul>
-        <button class="lg:hidden focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </nav>
-    </div>
     <div class="p-2 bg-transparent d-lg-flex d-none">
       <div class="w-full lg:w-3/4 p-4">
         <div class="d-flex justify-between items-center flex-wrap">
@@ -246,8 +330,98 @@
             </button>
           </div>
         </div>
+      <div class="bg-transparent">
+      <nav class="flex items-center justify-between" style="background-color: #151924">
+        <ul class="flex mr-2">
+          <li class="flex p-1">
+    <button class="btn btn-danger mr-2" id="p-btn">248.54</button>
+  <div id="btn-sale" class="bg-dark text-card-foreground p-4 text-light rounded-lg shadow-lg max-w-md mx-auto position-absolute end-0 top-0">
+  <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
+  <div class="flex justify-between mb-4">
+    <div class="bg-red-500 text-white p-2 rounded-start cursor-pointer w-full text-center">Sell</div>
+    <div class="bg-green-500 text-white p-2 rounded-end  cursor-none text-center">Buy</div>
+  </div>
+  <div class="flex justify-between mb-4">
+    <span class="text-lg">254.49</span>
+    <span class="text-lg">254.49</span>
+  </div>
+  <div class="flex mb-4">
+    <button class="bg-primary text-primary-foreground p-2 rounded-start w-full">Market</button>
+    <button class="bg-muted text-muted-foreground p-2  w-full">Limit</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-end w-full">Stop</button>
+  </div>
+  <div class="mb-4">
+    <label class="block text-sm mb-1">Units</label>
+    <input type="number" class="border border-border rounded p-2 w-full text-dark" value="1" />
+  </div>
+  <div class="flex mb-4">
+    <div class="flex-1 mr-2">
+      <label class="block text-sm mb-1">Take Profit</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+    <div class="flex-1 ml-2">
+      <label class="block text-sm mb-1">Stop Loss</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+  </div>
+  <button class="bg-destructive text-destructive-foreground p-2 rounded w-full">Sell 1 AAPL MKT</button>
+  <div class="mt-4 text-sm text-muted-foreground">Order info</div>
+          </li>
+          <li class="flex p-1">
+                <button class="btn btn-success mr-2" id="p-btn2">248.56</button>
+  <div id="btn-sale2" class="bg-dark text-card-foreground p-4 text-light rounded-lg shadow-lg max-w-md mx-auto position-absolute end-0 top-0">
+  <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close2" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
+  <div class="flex justify-between mb-4">
+    <div class="bg-red-500 text-white p-2 rounded-start cursor-none text-center">Sell</div>
+    <div class="bg-green-500 text-white p-2 rounded-end  cursor-pointer w-full text-center">Buy</div>
+  </div>
+  <div class="flex justify-between mb-4">
+    <span class="text-lg">254.49</span>
+    <span class="text-lg">254.49</span>
+  </div>
+  <div class="flex mb-4">
+    <button class="bg-primary text-primary-foreground p-2 rounded-start w-full">Market</button>
+    <button class="bg-muted text-muted-foreground p-2 w-full">Limit</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-end w-full">Stop</button>
+  </div>
+  <div class="mb-4">
+    <label class="block text-sm mb-1">Units</label>
+    <input type="number" class="border border-border rounded p-2 w-full text-dark" value="1" />
+  </div>
+  <div class="flex mb-4">
+    <div class="flex-1 mr-2">
+      <label class="block text-sm mb-1">Take Profit</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+    <div class="flex-1 ml-2">
+      <label class="block text-sm mb-1">Stop Loss</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+  </div>
+  <button class="bg-destructive text-destructive-foreground p-2 rounded w-full">Sell 1 AAPL MKT</button>
+  <div class="mt-4 text-sm text-muted-foreground">Order info</div>
+          </li>
+        </ul>
+        <ul class="flex ml-2">
+          <li class="flex p-1">
+            <b class="px-2 text-light">⏱</b><p class="px-4 text-success">1h:23m:56s</p>
+          </li>
+          <li class="flex p-1">
+            <b class="px-2 text-light">⏱</b><p class="px-4 text-danger">27m:6s</p>
+          </li>
+        </ul>
+      </nav>
+      </div>
         <div class="justify-content-end align-items-center">
-        <canvas id="myChart" class="rounded-lg shadow-lg" style="min-height: 400px;"></canvas>
+        <canvas id="myChart" class="rounded-lg shadow-lg" style="min-height: 400px; max-height: 600px;"></canvas>
         <div class="d-flex justify-content-between align-items-center">
           <ul class="flex  flex-wrap justify-start items-center" dir="ltr">
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10s10-4.477 10-10m-10.004 0h.009M12 2v4m10 6h-4m-6 6v4M6 12H2" color="#f9f9f9"/></svg></li>
@@ -267,7 +441,7 @@
         </div>
       </div>
       <div class="w-full lg:w-1/4 bg-transparent p-4 rounded-lg shadow-lg">
-        <h2 class="text-lg font-semibold mb-2">
+        <div class="flex justify-content-between align-items-center">
           <select name="whatchlist" id="watch" class="btn btn-outline-light dropdown-toggle w-50 border-0 rounded-lg text-white " style="background-color: #131722;">
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -280,41 +454,64 @@
             <option value="HKD">HKD</option>
             <option value="NZD">NZD</option>
             <option value="SEK">SEK</option>
-          </select>
-        </h2>
-        <input type="text" placeholder="Search" class="p-2 mb-4 border border-border rounded-lg w-full" />
+          </select>  
+    <span id="open" class="bg-transparent p-1 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h8m0 0h8m-8 0V4m0 8v8"/></svg></span>
+  <div id="open-this" class="bg-dark w-100 text-foreground p-4 rounded-lg shadow-lg position-absolute top-0 start-0">
+  <h2 class="text-xl font-semibold mb-4">Add Symbol <span id="closeT" class="position-absolute end-0 mr-2 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="28" viewBox="0 0 12 16">
+	<path fill="#fff" d="M10 12.5a.47.47 0 0 1-.35-.15l-8-8c-.2-.2-.2-.51 0-.71s.51-.2.71 0l7.99 8.01c.2.2.2.51 0 .71c-.1.1-.23.15-.35.15Z" />
+	<path fill="#fff" d="M2 12.5a.47.47 0 0 1-.35-.15c-.2-.2-.2-.51 0-.71l8-7.99c.2-.2.51-.2.71 0s.2.51 0 .71l-8.01 7.99c-.1.1-.23.15-.35.15" />
+</svg></span></h2>
+  <div class="mb-4">
+    <input type="text" placeholder="Search" class="w-full p-2 border border-border rounded-lg bg-input text-foreground" />
+  </div>
+  <div class="flex flex-wrap mb-4">
+    <button class="bg-secondary text-secondary-foreground p-2 rounded-lg mr-2 mb-2">All</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mr-2 mb-2">Stock</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mr-2 mb-2">Forex</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mr-2 mb-2">Index</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mb-2">Crypto</button>
+  </div>
+  <div class="max-h-80 w-full">
+    <ul class="divide-y divide-border">
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=₿" alt="BTCUSDT" class="w-6 h-6 mr-2" />
+          <span class="font-medium">BTCUSDT</span>
+        </div>
+        <span class="text-muted-foreground">BITCOIN / TETHERUS</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=₿" alt="BTCUSD" class="w-6 h-6 mr-2" />
+          <span class="font-medium">BTCUSD</span>
+        </div>
+        <span class="text-muted-foreground">BITCOIN / U.S. DOLLAR</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=🟡" alt="XAUUSD" class="w-6 h-6 mr-2" />
+          <span class="font-medium">XAUUSD</span>
+        </div>
+        <span class="text-muted-foreground">GOLD</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=₿" alt="ETHUSDT" class="w-6 h-6 mr-2" />
+          <span class="font-medium">ETHUSDT</span>
+        </div>
+        <span class="text-muted-foreground">ETHEREUM / TETHERUS</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+    </ul>
+  </div>
+</div>
+        </div>
+        <input type="text" placeholder="Search" class="p-2 mb-4 border border-border rounded-lg w-full bg-transparent" />
         <div class="overflow-y-auto h-64">
-          <ul>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>USDCAD</span>
-              <span class="text-red-500">1.42099</span>
-              <span class="text-green-500">1.42103</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>USDCHF</span>
-              <span class="text-red-500">0.89145</span>
-              <span class="text-green-500">0.89157</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>EURCHF</span>
-              <span class="text-red-500">0.93313</span>
-              <span class="text-green-500">0.93317</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>EURGBP</span>
-              <span class="text-red-500">0.82637</span>
-              <span class="text-green-500">0.82644</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>USDJPY</span>
-              <span class="text-red-500">152.579</span>
-              <span class="text-green-500">152.586</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>AUDUSD</span>
-              <span class="text-red-500">0.63652</span>
-              <span class="text-green-500">0.63654</span>
-            </li>
+          <ul id="trade">
           </ul>
         </div>
         <div class="overflow-y-auto border-top border-secondary mt-2">
@@ -328,8 +525,8 @@
   <p class="text-green-500 dark:text-green-400">0.17 (0.07%)</p>
   <p class="text-muted-foreground dark:text-muted">AT CLOSE</p>
   <div class="flex space-x-4 mt-2">
-    <button class="w-100 bg-secondary dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded">POST</button>
-    <button class="w-100 bg-secondary dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded">NO</button>
+    <button class="w-100 bg-secondary dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded fw-bolder">POST</button>
+    <button class="w-100 bg-light dark:bg-secondary/60 text-secondary-foreground dark:text-secondary-foreground hover:bg-secondary/80 dark:hover:bg-secondary/70 p-2 rounded fw-bolder">NO</button>
   </div>
   <div class="mt-4">
     <span class="text-muted-foreground dark:text-muted m-4">247.60</span>
@@ -379,7 +576,101 @@
             </button>
           </div>
         </div> 
+        <div class="bg-transparent">
+      <nav class="flex items-center justify-between" style="background-color: #151924">
+        <ul class="flex mr-2">
+          <li class="flex p-1">
+    <button class="btn btn-danger mr-2" id="p-btn3">248.54</button>
+  <div id="btn-sale3" class="bg-dark text-card-foreground p-4 text-light rounded-lg shadow-lg max-w-md mx-auto position-absolute end-0 top-0">
+  <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close3" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
+  <div class="flex justify-between mb-4">
+    <div class="bg-red-500 text-white p-2 rounded-start cursor-pointer w-full text-center">Sell</div>
+    <div class="bg-green-500 text-white p-2 rounded-end  cursor-none text-center">Buy</div>
+  </div>
+  <div class="flex justify-between mb-4">
+    <span class="text-lg">254.49</span>
+    <span class="text-lg">254.49</span>
+  </div>
+  <div class="flex mb-4">
+    <button class="bg-primary text-primary-foreground p-2 rounded-start w-full">Market</button>
+    <button class="bg-muted text-muted-foreground p-2  w-full">Limit</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-end w-full">Stop</button>
+  </div>
+  <div class="mb-4">
+    <label class="block text-sm mb-1">Units</label>
+    <input type="number" class="border border-border rounded p-2 w-full text-dark" value="1" />
+  </div>
+  <div class="flex mb-4">
+    <div class="flex-1 mr-2">
+      <label class="block text-sm mb-1">Take Profit</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+    <div class="flex-1 ml-2">
+      <label class="block text-sm mb-1">Stop Loss</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+  </div>
+  <button class="bg-destructive text-destructive-foreground p-2 rounded w-full">Sell 1 AAPL MKT</button>
+  <div class="mt-4 text-sm text-muted-foreground">Order info</div>
+          </li>
+          <li class="flex p-1">
+                <button class="btn btn-success mr-2" id="p-btn4">248.56</button>
+  <div id="btn-sale4" class="bg-dark text-card-foreground p-4 text-light rounded-lg shadow-lg max-w-md mx-auto position-absolute end-0 top-0">
+  <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close4" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
+  <div class="flex justify-between mb-4">
+    <div class="bg-red-500 text-white p-2 rounded-start cursor-none text-center">Sell</div>
+    <div class="bg-green-500 text-white p-2 rounded-end  cursor-pointer w-full text-center">Buy</div>
+  </div>
+  <div class="flex justify-between mb-4">
+    <span class="text-lg">254.49</span>
+    <span class="text-lg">254.49</span>
+  </div>
+  <div class="flex mb-4">
+    <button class="bg-primary text-primary-foreground p-2 rounded-start w-full">Market</button>
+    <button class="bg-muted text-muted-foreground p-2 w-full">Limit</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-end w-full">Stop</button>
+  </div>
+  <div class="mb-4">
+    <label class="block text-sm mb-1">Units</label>
+    <input type="number" class="border border-border rounded p-2 w-full text-dark" value="1" />
+  </div>
+  <div class="flex mb-4">
+    <div class="flex-1 mr-2">
+      <label class="block text-sm mb-1">Take Profit</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+    <div class="flex-1 ml-2">
+      <label class="block text-sm mb-1">Stop Loss</label>
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full" placeholder="Ticks" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Price" />
+      <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
+    </div>
+  </div>
+  <button class="bg-destructive text-destructive-foreground p-2 rounded w-full">Sell 1 AAPL MKT</button>
+  <div class="mt-4 text-sm text-muted-foreground">Order info</div>
+          </li>
+        </ul>
+      </nav>
+      </div>
         <div class="justify-content-end align-items-center w-full">
+      <div class="bg-transparent">
+      <nav style="background-color: #151924">
+        <ul class="flex align-items-center justify-between mr-2 w-full">
+          <li class="flex justify-between align-items-center p-1">
+            <b class="text-light">USE</b><p class="text-success">207.5$</p>
+          </li>
+          <li class="flex p-1">
+            <b class="text-light">USE</b><p class="text-danger">203.2$</p>
+          </li>
+        </ul>
+      </nav>
+      </div>
         <canvas id="myChart2" class="rounded-lg shadow-lg"></canvas>
         <div class="d-flex justify-content-between align-items-center w-full">
           <ul class="flex  justify-start items-center overflow-x-scroll w-full" dir="ltr">
@@ -406,7 +697,8 @@
           <button class="btn btn-outline-danger w-100 p-2 m-2 d-flex justify-content-around align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><g fill="none" stroke="#e30000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#e30000"><path d="M20 11v5h-5"/><path d="m20 16l-5-5c-.883-.883-1.324-1.324-1.865-1.373a1.5 1.5 0 0 0-.27 0c-.541.05-.982.49-1.865 1.373s-1.324 1.324-1.865 1.373q-.135.012-.27 0c-.541-.05-.982-.49-1.865-1.373L4 8"/></g></svg>          </button>
         </div>
-        <h2 class="text-lg font-semibold mb-2">
+        <div>
+        <div class="flex justify-content-between align-items-center">
           <select name="whatchlist" id="watch" class="btn btn-outline-light dropdown-toggle w-50 border-0 rounded-lg text-white " style="background-color: #131722;">
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -419,41 +711,65 @@
             <option value="HKD">HKD</option>
             <option value="NZD">NZD</option>
             <option value="SEK">SEK</option>
-          </select>
-        </h2>
+          </select>  
+    <span id="open2" class="bg-transparent p-1 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h8m0 0h8m-8 0V4m0 8v8"/></svg></span>
+  <div id="open-this2" class="bg-dark w-100 text-foreground p-4 rounded-lg shadow-lg position-absolute top-0 start-0">
+  <h2 class="text-xl font-semibold mb-4">Add Symbol <span id="closeT2" class="position-absolute end-0 mr-2 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="28" viewBox="0 0 12 16">
+	<path fill="#fff" d="M10 12.5a.47.47 0 0 1-.35-.15l-8-8c-.2-.2-.2-.51 0-.71s.51-.2.71 0l7.99 8.01c.2.2.2.51 0 .71c-.1.1-.23.15-.35.15Z" />
+	<path fill="#fff" d="M2 12.5a.47.47 0 0 1-.35-.15c-.2-.2-.2-.51 0-.71l8-7.99c.2-.2.51-.2.71 0s.2.51 0 .71l-8.01 7.99c-.1.1-.23.15-.35.15" />
+</svg></span></h2>
+  <div class="mb-4">
+    <input type="text" placeholder="Search" class="w-full p-2 border border-border rounded-lg bg-input text-foreground" />
+  </div>
+  <div class="flex flex-wrap mb-4">
+    <button class="bg-secondary text-secondary-foreground p-2 rounded-lg mr-2 mb-2">All</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mr-2 mb-2">Stock</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mr-2 mb-2">Forex</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mr-2 mb-2">Index</button>
+    <button class="bg-muted text-muted-foreground p-2 rounded-lg mb-2">Crypto</button>
+  </div>
+  <div class="max-h-80 w-full">
+    <ul class="divide-y divide-border">
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=₿" alt="BTCUSDT" class="w-6 h-6 mr-2" />
+          <span class="font-medium">BTCUSDT</span>
+        </div>
+        <span class="text-muted-foreground">BITCOIN / TETHERUS</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=₿" alt="BTCUSD" class="w-6 h-6 mr-2" />
+          <span class="font-medium">BTCUSD</span>
+        </div>
+        <span class="text-muted-foreground">BITCOIN / U.S. DOLLAR</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=🟡" alt="XAUUSD" class="w-6 h-6 mr-2" />
+          <span class="font-medium">XAUUSD</span>
+        </div>
+        <span class="text-muted-foreground">GOLD</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+      <li class="flex justify-between items-center py-2">
+        <div class="flex items-center">
+          <img src="https://openui.fly.dev/openui/24x24.svg?text=₿" alt="ETHUSDT" class="w-6 h-6 mr-2" />
+          <span class="font-medium">ETHUSDT</span>
+        </div>
+        <span class="text-muted-foreground">ETHEREUM / TETHERUS</span>
+        <button class="bg-accent text-accent-foreground p-1 rounded-pill ml-2">+</button>
+      </li>
+    </ul>
+  </div>
+</div>
+        </div>
+              </div>
         <input type="text" placeholder="Search" class="p-2 mb-4 border border-border rounded-lg w-full" />
         <div class="overflow-y-auto h-64">
-          <ul>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>USDCAD</span>
-              <span class="text-red-500">1.42099</span>
-              <span class="text-green-500">1.42103</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>USDCHF</span>
-              <span class="text-red-500">0.89145</span>
-              <span class="text-green-500">0.89157</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>EURCHF</span>
-              <span class="text-red-500">0.93313</span>
-              <span class="text-green-500">0.93317</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>EURGBP</span>
-              <span class="text-red-500">0.82637</span>
-              <span class="text-green-500">0.82644</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>USDJPY</span>
-              <span class="text-red-500">152.579</span>
-              <span class="text-green-500">152.586</span>
-            </li>
-            <li class="flex justify-between items-center p-2 cursor-pointer">
-              <span>AUDUSD</span>
-              <span class="text-red-500">0.63652</span>
-              <span class="text-green-500">0.63654</span>
-            </li>
+          <ul id="trade">
           </ul>
         </div>
         <div class="overflow-y-auto border-top border-secondary mt-2">
@@ -526,16 +842,16 @@
         location.reload();
       }
       const myChart = new Chart(ctx, {
-        type: typeChart == null ? "line" : typeChart,
+        type: typeChart == null ? "bubble" : typeChart,
         data: {
           labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
           datasets: [
             {
               label: "USD/CNH",
-              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
+              data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300, {x: 12, y: 100, r: 15}],
               backgroundColor: "rgba(255, 255, 255, 0.1)",
-              borderColor: "#fff",
-              borderWidth: 1,
+              borderColor: "red",
+              borderWidth: 3,
               hoverBackgroundColor: "transparent",
               barPercentage: 0.5,
               grouped: true,
@@ -546,10 +862,10 @@
             },
             {
               label: "EUR/USD",
-              data: [12, 50, 130, 200, 75, 30, 150, 300, 280, 60, 80, 122.5, 77, 111, 101, 390],
+              data: [12, 50, 130, 200, 75, 30, 150, 300, 280, 60, 80, 122.5, 77, 111, 101, 390,  {x: 2, y: 10, r: 50}],
               backgroundColor: "#151924",
-              borderColor: "#white",
-              borderWidth: 1,
+              borderColor: "white",
+              borderWidth: 3,
               hoverBackgroundColor: "transparent",
               barPercentage: 0.5,
               grouped: true,
@@ -560,10 +876,10 @@
             },
             {
               label: "GBP/USD",
-              data:  [12, 50, 130, 200, 75, 30, 150, 300, 210, 90, 20, 126.5, 17, 11, 161, 310],
+              data:  [12, 50, 130, 200, 75, 30, 150, 300, 210, 90, 20, 126.5, 17, 11, 161, 310,  {x: 75, y: 10, r: 23}],
               backgroundColor: "#141414",
-              borderColor: "#fff",
-              borderWidth: 1,
+              borderColor: "green",
+              borderWidth: 3,
               hoverBackgroundColor: "transparent",
               barPercentage: 0.5,
               grouped: true,
@@ -574,10 +890,10 @@
             },
             {
               label: "USD/JPY",
-              data: [12, 102, 180, 109, 190, 750, 80, 130, 150, 180, 200, 220, 240, 260, 280, 300],
+              data: [12, 102, 180, 109, 190, 750, 80, 130, 150, 180, 200, 220, 240, 260, 280, 300,  {x: 120, y: 60, r: 105}],
               backgroundColor: "rgba(255, 255, 255, 0.8)",
-              borderColor: "#00000",
-              borderWidth: 1,
+              borderColor: "black",
+              borderWidth: 3,
               hoverBackgroundColor: "transparent",
               barPercentage: 0.5,
               grouped: true,
@@ -634,13 +950,13 @@
         type:  typeChart == null ? "line" : typeChart,
         data: {
           labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] ,
-          datasets: [
+          datasets: [           
             {
               label: "USD/CNH",
               data: [1, 12, 18, 100, 180, 75, 80, 120, 150, 180, 200, 220, 240, 260, 280, 300],
               backgroundColor: "rgba(255, 255, 255, 0.1)",
-              borderColor: "#fff",
-              borderWidth: 1,
+              borderColor: "red",
+              borderWidth: 3,
               hoverBackgroundColor: "transparent",
               barPercentage: 0.5,
               grouped: true,
@@ -653,8 +969,8 @@
               label: "EUR/USD",
               data: [12, 50, 130, 200, 75, 30, 150, 300, 280, 60, 80, 122.5, 77, 111, 101, 390],
               backgroundColor: "#151924",
-              borderColor: "#white",
-              borderWidth: 1,
+              borderColor: "green",
+              borderWidth: 3,
               hoverBackgroundColor: "transparent",
               barPercentage: 0.5,
               grouped: true,
@@ -667,7 +983,7 @@
         },
         options: {
           responsive: {
-                    
+          display: true,      
           },
           scales: {
             y: {
@@ -704,6 +1020,73 @@
           }          
         },
       });
+      let btnSale = document.getElementById('btn-sale');  
+      let btn = document.getElementById('p-btn');  
+      let close = document.getElementById('close');
+      btn.onclick = function(){
+        btnSale.style.opacity = "1";
+        btnSale.style.display = "block";
+      }
+      close.onclick = function(){
+        btnSale.style.opacity = "0";
+        btnSale.style.display = "none";
+      }
+      let btnSale2 = document.getElementById('btn-sale2');  
+      let btn2 = document.getElementById('p-btn2');  
+      let close2 = document.getElementById('close2');
+      btn2.onclick = function(){
+        btnSale2.style.opacity = "1";
+        btnSale2.style.display = "block";
+      }
+      close2.onclick = function(){
+        btnSale2.style.opacity = "0";
+        btnSale2.style.display = "none";
+      }
+      let btnSale3 = document.getElementById('btn-sale3');  
+      let btn3 = document.getElementById('p-btn3');  
+      let close3 = document.getElementById('close3');
+      btn3.onclick = function(){
+        btnSale3.style.opacity = "1";
+        btnSale3.style.display = "block";
+      }
+      close3.onclick = function(){
+        btnSale3.style.opacity = "0";
+        btnSale3.style.display = "none";
+      }
+      let btnSale4 = document.getElementById('btn-sale4');  
+      let btn4 = document.getElementById('p-btn4');  
+      let close4 = document.getElementById('close4');
+      btn4.onclick = function(){
+        btnSale4.style.opacity = "1";
+        btnSale4.style.display = "block";
+      }
+      close4.onclick = function(){
+        btnSale4.style.opacity = "0";
+        btnSale4.style.display = "none";
+      }
+      let open = document.getElementById('open');  
+      let closeT = document.getElementById('closeT');  
+      let openT = document.getElementById('open-this');
+      open.onclick = function(){
+        openT.style.opacity = "1";
+        openT.style.display = "block";
+      }
+      closeT.onclick = function(){
+        openT.style.opacity = "0";
+        openT.style.display = "none";
+      }
+      let open2 = document.getElementById('open2');  
+      let closeT2 = document.getElementById('closeT2');  
+      let openT2 = document.getElementById('open-this2');
+      open2.onclick = function(){
+        openT2.style.opacity = "1";
+        openT2.style.display = "block";
+      }
+      closeT2.onclick = function(){
+        openT2.style.opacity = "0";
+        openT2.style.display = "none";
+      }
+      
     </script>
   </body>
 </html>
