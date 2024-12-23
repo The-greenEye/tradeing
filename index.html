@@ -2793,7 +2793,7 @@ library_path: 'https://charting-library.tradingview-widget.com/charting_library/
     enabled_features: [],
   });
 };
-window.onresize = function initOnReady() {
+window.onload = function initOnReady() {
   var widget = window.tvWidget = new TradingView.widget({
 library_path: 'https://charting-library.tradingview-widget.com/charting_library/',
     fullscreen: true,
