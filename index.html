@@ -422,12 +422,15 @@
         <div class="justify-content-end align-items-center pt-0 pb-0 pl-0" style="padding-right: 50px;">
         <canvas id="myChart" class="rounded-lg shadow-lg" style="min-height: 400px; max-height: 600px;"></canvas>
         <div id="chartContainer" style="height: 600px; width: 100%;display: none"></div>
+        <div id="chartContainer2-2" style="height: 600px; width: 100%;display: none"></div>
         <div class="d-flex justify-content-between align-items-center position-relative">
           <ul class="flex  flex-wrap justify-start items-center" dir="ltr">
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;" id="click" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
 	<path fill="#fff" d="M28 23v3.586l-5-5V15a1 1 0 0 0-.553-.894L17 11.381V5.828l2.586 2.586L21 7l-5-5l-5 5l1.414 1.414L15 5.828v5.554l-5.447 2.723A1 1 0 0 0 9 15v6.586l-5 5V23H2v7h7v-2H5.414l4.783-4.783l5.356 2.678a1 1 0 0 0 .894 0l5.356-2.678L26.586 28H23v2h7v-7Zm-13 .382l-4-2v-4.764l4 2Zm1-6.5L12.236 15L16 13.118L19.764 15Zm5 4.5l-4 2v-4.764l4-2Z" />
 </svg></li>
-          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-width="1.6" d="M15 9V6c0-.943 0-1.414.293-1.707S16.057 4 17 4h1c.943 0 1.414 0 1.707.293S20 5.057 20 6v1c0 .943 0 1.414-.293 1.707S18.943 9 18 9zM9 20H4v-5m0 5L15 9"/></svg></li>
+          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;" id="more"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+	<path fill="#fff" d="M5 6v2c3.2 0 6.36 1.18 8.57 3.15C15.64 13 16.83 15.5 17 18h1.97A14 12.5 0 0 0 5 6m17 15H2V3h2v16h18Z" />
+</svg></li>
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 512 512"><path fill="#f9f9f9" d="m19.828 18.256l-.002.015c249.642 36.995 371.904 169.983 397.32 278.01c-2.094 5.977-4.496 11.044-7.068 14.968c-17.29 26.383-62.522 40.075-101.654 28.596c5.984-19.75 10.132-39.834 12.07-59.12c-95.46 8.177-212.544 8.42-301.207-22.642c41.727 95.317 99.325 164.465 164.983 230.08c18.296-2.164 35.807-11.35 51.837-25.37c85.218 34.667 188.066-2.555 226.748-60.68c46.922-70.5 74.07-317.52-167.462-383.856H232.81c160.326 54.874 195.73 167.74 191.573 239.03c-37.15-93.627-137.68-191.855-312.38-239.03H19.83z"/></svg></li>
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 32 32"><path fill="#f9f9f9" d="M8 20H4.73A1.97 1.97 0 0 0 3 19a2 2 0 0 0 0 4a1.97 1.97 0 0 0 1.73-1H8zM29 9a1.97 1.97 0 0 0-1.73 1H24v2h3.27A2 2 0 1 0 29 9"/><path fill="#f9f9f9" d="M25.414 5L21 .586L16.586 5L20 8.414V18h2V8.414zM21 3.414L22.586 5L21 6.586L19.414 5zm-9 20.172V14h-2v9.586L6.586 27L11 31.414L15.414 27zM9.414 27L11 25.414L12.586 27L11 28.586z"/><path fill="#f9f9f9" d="M18 10H8.414L5 6.586L.586 11L5 15.414L8.414 12H18ZM5 12.586L3.414 11L5 9.414L6.586 11Z"/><path fill="#f9f9f9" d="M13 3a2 2 0 0 0-4 0a1.97 1.97 0 0 0 1 1.73V8h2V4.73A1.97 1.97 0 0 0 13 3m9 24.27V24h-2v3.27a2 2 0 1 0 2 0"/><path fill="#f9f9f9" d="M31.414 21L27 16.586L23.586 20H14v2h9.586L27 25.414ZM27 19.414L28.586 21L27 22.586L25.414 21Z"/></svg></li>
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 48 48"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" d="M32.33 5.87a1.15 1.15 0 0 1 1.66 0l7.49 7.49a1.15 1.15 0 0 1 0 1.67l-5 5l-9.16-9.16Zm-5 5L36.49 20l-1.67 1.67l-9.15-9.16Zm7.49 10.83l-18 18l-11.13 2.8h0L8.18 30l17.49-17.47M8.18 30.01l8.64 9.68m9.81-22.18L13.19 30.95M29.6 20.48L16.16 33.93"/></svg></li>
@@ -1793,12 +1796,16 @@
       </div>
         <canvas id="myChart2" class="rounded-lg shadow-lg"></canvas>
         <div id="chartContainer2" style="height: 600px; width: 100%;display: none"></div>
+        <div id="chartContainer2-3" style="height: 600px; width: 100%;display: none"></div>
         <div class="d-flex justify-content-between align-items-center w-full">
           <ul class="flex  justify-start items-center overflow-x-scroll w-full" dir="ltr">
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;" id="click2" ><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 32 32">
 	<path fill="#fff" d="M28 23v3.586l-5-5V15a1 1 0 0 0-.553-.894L17 11.381V5.828l2.586 2.586L21 7l-5-5l-5 5l1.414 1.414L15 5.828v5.554l-5.447 2.723A1 1 0 0 0 9 15v6.586l-5 5V23H2v7h7v-2H5.414l4.783-4.783l5.356 2.678a1 1 0 0 0 .894 0l5.356-2.678L26.586 28H23v2h7v-7Zm-13 .382l-4-2v-4.764l4 2Zm1-6.5L12.236 15L16 13.118L19.764 15Zm5 4.5l-4 2v-4.764l4-2Z" />
-</svg></li>          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-width="1.6" d="M15 9V6c0-.943 0-1.414.293-1.707S16.057 4 17 4h1c.943 0 1.414 0 1.707.293S20 5.057 20 6v1c0 .943 0 1.414-.293 1.707S18.943 9 18 9zM9 20H4v-5m0 5L15 9"/></svg></li>
-          <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 512 512"><path fill="#f9f9f9" d="m19.828 18.256l-.002.015c249.642 36.995 371.904 169.983 397.32 278.01c-2.094 5.977-4.496 11.044-7.068 14.968c-17.29 26.383-62.522 40.075-101.654 28.596c5.984-19.75 10.132-39.834 12.07-59.12c-95.46 8.177-212.544 8.42-301.207-22.642c41.727 95.317 99.325 164.465 164.983 230.08c18.296-2.164 35.807-11.35 51.837-25.37c85.218 34.667 188.066-2.555 226.748-60.68c46.922-70.5 74.07-317.52-167.462-383.856H232.81c160.326 54.874 195.73 167.74 191.573 239.03c-37.15-93.627-137.68-191.855-312.38-239.03H19.83z"/></svg></li>
+</svg></li>          
+<li class="p-2" style="background-color: #151924;border: none;cursor: pointer;" id="more2"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+  <path fill="#fff" d="M5 6v2c3.2 0 6.36 1.18 8.57 3.15C15.64 13 16.83 15.5 17 18h1.97A14 12.5 0 0 0 5 6m17 15H2V3h2v16h18Z" />
+</svg></li>
+▐<li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-width="1.6" d="M15 9V6c0-.943 0-1.414.293-1.707S16.057 4 17 4h1c.943 0 1.414 0 1.707.293S20 5.057 20 6v1c0 .943 0 1.414-.293 1.707S18.943 9 18 9zM9 20H4v-5m0 5L15 9"/></svg></li>
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 32 32"><path fill="#f9f9f9" d="M8 20H4.73A1.97 1.97 0 0 0 3 19a2 2 0 0 0 0 4a1.97 1.97 0 0 0 1.73-1H8zM29 9a1.97 1.97 0 0 0-1.73 1H24v2h3.27A2 2 0 1 0 29 9"/><path fill="#f9f9f9" d="M25.414 5L21 .586L16.586 5L20 8.414V18h2V8.414zM21 3.414L22.586 5L21 6.586L19.414 5zm-9 20.172V14h-2v9.586L6.586 27L11 31.414L15.414 27zM9.414 27L11 25.414L12.586 27L11 28.586z"/><path fill="#f9f9f9" d="M18 10H8.414L5 6.586L.586 11L5 15.414L8.414 12H18ZM5 12.586L3.414 11L5 9.414L6.586 11Z"/><path fill="#f9f9f9" d="M13 3a2 2 0 0 0-4 0a1.97 1.97 0 0 0 1 1.73V8h2V4.73A1.97 1.97 0 0 0 13 3m9 24.27V24h-2v3.27a2 2 0 1 0 2 0"/><path fill="#f9f9f9" d="M31.414 21L27 16.586L23.586 20H14v2h9.586L27 25.414ZM27 19.414L28.586 21L27 22.586L25.414 21Z"/></svg></li>
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 48 48"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" d="M32.33 5.87a1.15 1.15 0 0 1 1.66 0l7.49 7.49a1.15 1.15 0 0 1 0 1.67l-5 5l-9.16-9.16Zm-5 5L36.49 20l-1.67 1.67l-9.15-9.16Zm7.49 10.83l-18 18l-11.13 2.8h0L8.18 30l17.49-17.47M8.18 30.01l8.64 9.68m9.81-22.18L13.19 30.95M29.6 20.48L16.16 33.93"/></svg></li>
           <li class="p-2" style="background-color: #151924;border: none;cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"><path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7V5H5v2m7-2v14m0 0h-2m2 0h2"/></svg></li>
@@ -3405,8 +3412,90 @@ function getDataPointsFromCSV(csv) {
 }
 
 }
+document.getElementById('more2').onclick = function () {
+document.getElementById('chartContainer2').style.display = 'none'
+document.getElementById('myChart2').style.display = 'none'
+document.getElementById('chartContainer2-3').style.display = 'block';
+  var dataPoints1 = [], dataPoints2 = [];
+  var stockChart = new CanvasJS.StockChart("chartContainer2-3",{
+    theme: "dark2",
+    exportEnabled: true,
+    title:{
+      text:"More Charts"
+    },
+    charts: [{
+      axisY: {
+        prefix: "$"
+      },
+      data: [{
+        type: "candlestick",
+        yValueFormatString: "$#,###.00",
+        dataPoints : dataPoints1
+      }]
+    }],
+    navigator: {
+      data: [{
+        color: "#000000",
+        dataPoints: dataPoints2
+      }],
+      slider: {
+        minimum: new Date(2018, 04, 01),
+        maximum: new Date(2018, 06, 01)
+      }
+    }
+  });
+  $.getJSON("https://canvasjs.com/data/docs/ethusd2018.json", function(data) {
+    for(var i = 0; i < data.length; i++){
+      dataPoints1.push({x: new Date(data[i].date), y: [Number(data[i].open), Number(data[i].high), Number(data[i].low), Number(data[i].close)]});
+      dataPoints2.push({x: new Date(data[i].date), y: Number(data[i].close)});
+    }
+    stockChart.render();
+  });
+}
+document.getElementById('more').onclick = function () {
+document.getElementById('chartContainer').style.display = 'none'
+document.getElementById('myChart').style.display = 'none'
+document.getElementById('chartContainer2-2').style.display = 'block';
+  var dataPoints1 = [], dataPoints2 = [];
+  var stockChart = new CanvasJS.StockChart("chartContainer2-2",{
+    theme: "dark2",
+    exportEnabled: true,
+    title:{
+      text:"More Charts"
+    },
+    charts: [{
+      axisY: {
+        prefix: "$"
+      },
+      data: [{
+        type: "candlestick",
+        yValueFormatString: "$#,###.00",
+        dataPoints : dataPoints1
+      }]
+    }],
+    navigator: {
+      data: [{
+        color: "#000000",
+        dataPoints: dataPoints2
+      }],
+      slider: {
+        minimum: new Date(2018, 04, 01),
+        maximum: new Date(2018, 06, 01)
+      }
+    }
+  });
+  $.getJSON("https://canvasjs.com/data/docs/ethusd2018.json", function(data) {
+    for(var i = 0; i < data.length; i++){
+      dataPoints1.push({x: new Date(data[i].date), y: [Number(data[i].open), Number(data[i].high), Number(data[i].low), Number(data[i].close)]});
+      dataPoints2.push({x: new Date(data[i].date), y: Number(data[i].close)});
+    }
+    stockChart.render();
+  });
+}
     </script>
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.stock.min.js"></script>
   </body>
 </html>
