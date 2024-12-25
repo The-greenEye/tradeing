@@ -10,6 +10,164 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
     <title>Chart.Js</title>
+    <style>
+      			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 222.2 84% 4.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 222.2 84% 4.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 222.2 84% 4.9%;
+          --primary: 221.2 83.2% 53.3%;
+          --primary-foreground: 210 40% 98%;
+          --secondary: 210 40% 96.1%;
+          --secondary-foreground: 222.2 47.4% 11.2%;
+          --muted: 210 40% 96.1%;
+          --muted-foreground: 215.4 16.3% 46.9%;
+          --accent: 210 40% 96.1%;
+          --accent-foreground: 222.2 47.4% 11.2%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 214.3 31.8% 91.4%;
+          --input: 214.3 31.8% 91.4%;
+          --ring: 221.2 83.2% 53.3%;
+        }
+        .dark {
+          --background: 222.2 84% 4.9%;
+          --foreground: 210 40% 98%;
+          --card: 222.2 84% 4.9%;
+          --card-foreground: 210 40% 98%;
+          --popover: 222.2 84% 4.9%;
+          --popover-foreground: 210 40% 98%;
+          --primary: 217.2 91.2% 59.8%;
+          --primary-foreground: 222.2 47.4% 11.2%;
+          --secondary: 217.2 32.6% 17.5%;
+          --secondary-foreground: 210 40% 98%;
+          --muted: 217.2 32.6% 17.5%;
+          --muted-foreground: 215 20.2% 65.1%;
+          --accent: 217.2 32.6% 17.5%;
+          --accent-foreground: 210 40% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 217.2 32.6% 17.5%;
+          --input: 217.2 32.6% 17.5%;
+          --ring: 224.3 76.3% 48%;
+        }
+}
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 222.2 84% 4.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 222.2 84% 4.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 222.2 84% 4.9%;
+          --primary: 221.2 83.2% 53.3%;
+          --primary-foreground: 210 40% 98%;
+          --secondary: 210 40% 96.1%;
+          --secondary-foreground: 222.2 47.4% 11.2%;
+          --muted: 210 40% 96.1%;
+          --muted-foreground: 215.4 16.3% 46.9%;
+          --accent: 210 40% 96.1%;
+          --accent-foreground: 222.2 47.4% 11.2%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 214.3 31.8% 91.4%;
+          --input: 214.3 31.8% 91.4%;
+          --ring: 221.2 83.2% 53.3%;
+        }
+        .dark {
+          --background: 222.2 84% 4.9%;
+          --foreground: 210 40% 98%;
+          --card: 222.2 84% 4.9%;
+          --card-foreground: 210 40% 98%;
+          --popover: 222.2 84% 4.9%;
+          --popover-foreground: 210 40% 98%;
+          --primary: 217.2 91.2% 59.8%;
+          --primary-foreground: 222.2 47.4% 11.2%;
+          --secondary: 217.2 32.6% 17.5%;
+          --secondary-foreground: 210 40% 98%;
+          --muted: 217.2 32.6% 17.5%;
+          --muted-foreground: 215 20.2% 65.1%;
+          --accent: 217.2 32.6% 17.5%;
+          --accent-foreground: 210 40% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 210 40% 98%;
+          --border: 217.2 32.6% 17.5%;
+          --input: 217.2 32.6% 17.5%;
+          --ring: 224.3 76.3% 48%;
+        }
+      }
+      body {
+        background: #131722;
+        color: white;
+        overflow-x: hidden;
+      }
+      #btn-sale {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        display: none;
+      }
+      #btn-sale2, #btn-sale3, #btn-sale4, #open-this, #open-this2 {
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        display: none;
+        .input-ranges[type='range'] {
+  width: 210px;
+  height: 30px;
+  overflow: hidden;
+  outline: none;
+}
+
+      }
+
+    </style>
   </head>
   <body style="
         background: #131722;
@@ -20,11 +178,13 @@
       <div class="w-full lg:w-3/4 p-0">
         <div class="d-flex justify-between items-center flex-wrap">
         </div>
-      <div class="bg-transparent">
-      <nav class="flex items-center justify-between position-relative" style="background-color: #151924">
+        <div class="justify-content-end align-items-center pt-0 pb-0 pl-0">
+		<div id="myChart position-relative">
+    <div class="bg-transparent p-0 position-absolute" style="bottom: -113px; left: 0;">
+      <nav class="bg-transparent flex items-center justify-between position-relative">
         <ul class="flex mr-2">
-          <li class="flex p-1">
-    <button class="btn btn-danger mr-2" id="p-btn">248.54</button>
+          <li class="flex p-0">
+    <button class="btn rounded-start-pill btn-danger" id="p-btn">248.54</button>
   <div id="btn-sale" class="bg-dark z-3 text-card-foreground p-4 text-light rounded-lg shadow-lg max-w-md mx-auto position-fixed end-0 top-0 z-3">
   <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
   <div class="flex justify-between mb-4">
@@ -61,8 +221,8 @@
   <button class="bg-destructive text-destructive-foreground p-2 rounded w-full">Sell 1 AAPL MKT</button>
   <div class="mt-4 text-sm text-muted-foreground">Order info</div>
           </li>
-          <li class="flex p-1">
-                <button class="btn btn-success mr-2" id="p-btn2">248.56</button>
+          <li class="flex p-0">
+                <button class="btn rounded-end-pill btn-success" id="p-btn2">248.56</button>
   <div id="btn-sale2" class="bg-dark z-3 text-card-foreground p-4 text-light rounded-lg shadow-lg max-w-md mx-auto position-fixed end-0 top-0 z-3">
   <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close2" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
   <div class="flex justify-between mb-4">
@@ -101,12 +261,9 @@
           </li>
         </ul>
       </nav>
-      </div>
-        <div class="justify-content-end align-items-center pt-0 pb-0 pl-0">
-		<div id="myChart">           
-          <div class="tradingview-widget-container">
+      </div>           
+    <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget" style="height: 100%; width: 100%"></div>
-  <div class="tradingview-widget-copyright" style="width: 100%"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
   {
   "autosize": true,
@@ -127,8 +284,9 @@
         </div>
       </div>
       <div class="w-full lg:w-1/4 bg-transparent p-4 rounded-lg shadow-lg">
-        <div class="flex justify-content-between align-items-center">
-          <select name="whatchlist" id="watch" class="btn btn-outline-light dropdown-toggle w-50 border-0 rounded-lg text-white " style="background-color: #131722;">
+        <div class="flex justify-content-between align-items-center mb-4">
+          <select name="whatchlist" id="watch" class="btn mr-4 btn-outline-light dropdown-toggle w-100 border-0 rounded-pill text-white " style="background-color: #0e1118;">
+            <option value="" display>Chose Your Fav Coin</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option>
@@ -141,7 +299,7 @@
             <option value="NZD">NZD</option>
             <option value="SEK">SEK</option>
           </select>  
-    <span id="open" class="bg-transparent p-1 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h8m0 0h8m-8 0V4m0 8v8"/></svg></span>
+    <span id="open" class="p-1 cursor-pointer rounded-circle" style="background-color:  #0e1118;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h8m0 0h8m-8 0V4m0 8v8"/></svg></span>
   <div id="open-this" class="bg-dark w-100 z-3 text-foreground p-4 rounded-lg shadow-lg position-fixed h-100 top-0 start-0">
   <h2 class="text-xl font-semibold mb-4">Add Symbol <span id="closeT" class="position-absolute end-0 mr-2 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="28" viewBox="0 0 12 16">
 	<path fill="#fff" d="M10 12.5a.47.47 0 0 1-.35-.15l-8-8c-.2-.2-.2-.51 0-.71s.51-.2.71 0l7.99 8.01c.2.2.2.51 0 .71c-.1.1-.23.15-.35.15Z" />
@@ -195,7 +353,7 @@
   </div>
 </div>
         </div>
-<div class="content">
+<div class="content mb-4">
   <style>
 .content {
   display: flex;
@@ -1220,7 +1378,14 @@
       </a>
     </div>
   </div>
-</div>        <div class="overflow-y-auto h-64">
+</div>        
+<div id="tradee" class="overflow-y-auto h-64">
+  <style>
+    #tradee::-webkit-scrollbar {
+      width: 1px;
+      border-radius: 50%;
+    }
+  </style>
           <ul id="trade">
             <li class="flex justify-between items-center py-2">
               <div class="flex items-center">
@@ -1304,12 +1469,22 @@
     </div>
     <div class="flex flex-col lg:flex-row p-0 bg-transparent  d-lg-none d-inline">
       <div class="w-full lg:w-3/4 p-1">
-        <div class="bg-transparent">
-      <nav class="flex items-center justify-between" style="background-color: #151924">
+
+        <div class="justify-content-end align-items-center w-full">
+    		<div id="myCharting" style="position: relative">
+    		<div class="bg-transparent p-0 position-absolute" style="bottom: 42px; left: -32px;scale: 0.6">
+      <nav class="flex items-center justify-between">
         <ul class="flex mr-2">
-          <li class="flex p-1">
-    <button class="btn btn-danger mr-2" id="p-btn3">248.54</button>
-  <div id="btn-sale3" class="bg-dark z-3 text-card-foreground p-2 text-light shadow-lg max-w-md mx-auto position-fixed end-0 top-0">
+          <li class="flex p-0">
+    <button class="btn btn-danger rounded-start-pill" id="p-btn3">248.54</button>
+          </li>
+          <li class="flex p-0">
+                <button class="btn btn-success rounded-end-pill" id="p-btn4">248.56</button>
+          </li>
+        </ul>
+      </nav>
+      </div>  
+      <div id="btn-sale3" class="bg-dark z-3 text-card-foreground p-2 text-light shadow-lg max-w-md mx-auto position-fixed h-100 end-0 top-0">
   <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close3" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
   <div class="flex justify-between mb-4">
     <div class="bg-red-500 text-white p-2 rounded-start cursor-pointer w-full text-center">Sell</div>
@@ -1342,12 +1517,10 @@
       <input type="number" class="border border-border rounded  text-dark p-2 w-full mt-2" placeholder="Money" />
     </div>
   </div>
-  <button class="bg-destructive text-destructive-foreground p-2 rounded w-full">Sell 1 AAPL MKT</button>
+  <button class="bg-danger text-destructive-foreground p-2 rounded w-full">Sell 1 AAPL MKT</button>
   <div class="mt-4 text-sm text-muted-foreground">Order info</div>
-          </li>
-          <li class="flex p-1">
-                <button class="btn btn-success mr-2" id="p-btn4">248.56</button>
-  <div id="btn-sale4" class="bg-dark z-3 text-card-foreground p-2 text-light shadow-lg max-w-md mx-auto position-fixed end-0 top-0">
+  </div> 
+    <div id="btn-sale4" class="bg-dark z-3 text-card-foreground p-2 text-light shadow-lg max-w-md mx-auto position-fixed end-0 top-0">
   <h1 class="text-xl font-bold mb-4">AAPL, Trading <span id="close4" class="position-absolute mr-2 end-0 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24"><path fill="#fff" d="m13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29l-4.3 4.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l4.29-4.3l4.29 4.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z"/></svg></span></h1>
   <div class="flex justify-between mb-4">
     <div class="bg-red-500 text-white p-2 rounded-start cursor-none text-center">Sell</div>
@@ -1382,28 +1555,9 @@
   </div>
   <button class="bg-green-500 text-destructive-foreground p-2 rounded w-full">Pay 1 AAPL MKT</button>
   <div class="mt-4 text-sm text-muted-foreground">Order info</div>
-          </li>
-        </ul>
-      </nav>
-      </div>
-        <div class="justify-content-end align-items-center w-full">
-      <div class="bg-transparent">
-      <nav style="background-color: #151924">
-        <ul class="flex align-items-center justify-between mr-2 w-full">
-          <li class="flex justify-between align-items-center p-1">
-            <b class="text-light">USE</b><p class="text-success">207.5$</p>
-          </li>
-          <li class="flex p-1">
-            <b class="text-light">USE</b><p class="text-danger">203.2$</p>
-          </li>
-        </ul>
-      </nav>
-      </div>
-    		<div id="myCharting">
-    		            
-          <div class="tradingview-widget-container" style="height:100%;width:100%">
+  </div>       
+  <div class="tradingview-widget-container" style="height:100%;width:100%">
   <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
   {
   "autosize": true,
@@ -1425,8 +1579,9 @@
       </div>
       <div class="w-full lg:w-1/4 bg-transparent p-1 rounded-lg shadow-lg">
         <div>
-        <div class="flex justify-content-between align-items-center">
-          <select name="whatchlist" id="watch" class="btn btn-outline-light dropdown-toggle w-50 border-0 rounded-lg text-white " style="background-color: #131722;">
+        <div class="flex justify-content-between align-items-center mb-4">
+          <select name="whatchlist" id="watch" class="btn mr-4 btn-outline-light dropdown-toggle w-100 border-0 rounded-pill text-white " style="background-color: #0e1118;">
+            <option value="" display>Chose Your Fav Coin</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option>
@@ -1439,8 +1594,8 @@
             <option value="NZD">NZD</option>
             <option value="SEK">SEK</option>
           </select>  
-    <span id="open2" class="bg-transparent p-1 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h8m0 0h8m-8 0V4m0 8v8"/></svg></span>
-  <div id="open-this2" class="bg-dark z-3 w-100 text-foreground p-4 shadow-lg position-fixed h-100 top-0 start-0">
+    <span id="open2" class="p-1 cursor-pointer rounded-circle" style="background-color:  #0e1118;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h8m0 0h8m-8 0V4m0 8v8"/></svg></span>
+  <div id="open-this2" class="bg-dark w-100 z-3 text-foreground p-4 rounded-lg shadow-lg position-fixed h-100 top-0 start-0">
   <h2 class="text-xl font-semibold mb-4">Add Symbol <span id="closeT2" class="position-absolute end-0 mr-2 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="28" viewBox="0 0 12 16">
 	<path fill="#fff" d="M10 12.5a.47.47 0 0 1-.35-.15l-8-8c-.2-.2-.2-.51 0-.71s.51-.2.71 0l7.99 8.01c.2.2.2.51 0 .71c-.1.1-.23.15-.35.15Z" />
 	<path fill="#fff" d="M2 12.5a.47.47 0 0 1-.35-.15c-.2-.2-.2-.51 0-.71l8-7.99c.2-.2.51-.2.71 0s.2.51 0 .71l-8.01 7.99c-.1.1-.23.15-.35.15" />
@@ -1493,6 +1648,7 @@
   </div>
 </div>
         </div>
+      </div>
               </div>
 <div class="content">
   <style>
