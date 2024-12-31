@@ -189,9 +189,9 @@
     }
 
     #chartMobile {
-      position: absolute;
-      left: 1000px;
-      top: 0;
+      overflow: hidden;
+      width: 0px;
+      height: 0px;
       transition: all 0.5s ease-in-out;
     }
   </style>
@@ -1264,7 +1264,7 @@
       <div class="p-4 bg-transparent text-light rounded-lg shadow-md">
         <h2 class="text-lg font-semibold">Open Positions</h2>
         <div class="flex items-center justify-between mt-2">
-          <div class="flex align-items-center overflow-y-auto w-full">
+          <div class="flex align-items-center overflow-x-auto w-full">
             <button class="text-light w-100 p-2 rounded-pill m-2 flex" style="background-color: #0e1118;">Currencies <span
                 class="font-bold ml-2">3</span>
             </button>
@@ -1321,11 +1321,13 @@
       let closeChart = document.getElementById('closeMycharting');
       mobileBTN.onclick = function () {
         mobile.style.display = 'none';
-        chartMobile.style.left = '0';
+        chartMobile.style.width = '100%';
+        chartMobile.style.height = '100%';
       }
       closeChart.onclick = function () {
         mobile.style.display = 'block';
-        chartMobile.style.left = '1000px';
+        chartMobile.style.width = '0';
+        chartMobile.style.height = '0';
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
