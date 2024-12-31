@@ -190,6 +190,9 @@
 
     #chartMobile {
       overflow: hidden;
+      position: absolute;
+      top: 0;
+      opacity: 0;
       width: 0px;
       height: 0px;
       transition: all 0.5s ease-in-out;
@@ -1322,14 +1325,16 @@
       mobileBTN.onclick = function () {
         mobile.style.display = 'none';
         chartMobile.style.width = '100%';
-        chartMobile.style.height = '100%';
+        chartMobile.style.height = '100vh';
+        chartMobile.style.opacity = '1';
         chartMobile.style.overflow = 'auto';
       }
       closeChart.onclick = function () {
         mobile.style.display = 'block';
         chartMobile.style.width = '0';
         chartMobile.style.height = '0';
-	chartMobile.style.overflow = 'hidden';
+        chartMobile.style.opacity = '0';
+        chartMobile.style.overflow = 'hidden';
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
