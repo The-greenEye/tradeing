@@ -189,9 +189,9 @@
     }
 
     #chartMobile {
-      display: none;
       position: absolute;
       left: 1000px;
+      top: 0;
       transition: all 0.5s ease-in-out;
     }
   </style>
@@ -1322,12 +1322,10 @@
       mobileBTN.onclick = function () {
         mobile.style.display = 'none';
         chartMobile.style.left = '0';
-        chartMobile.style.display = 'block';
       }
       closeChart.onclick = function () {
         mobile.style.display = 'block';
         chartMobile.style.left = '1000px';
-        chartMobile.style.display = 'none';
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
